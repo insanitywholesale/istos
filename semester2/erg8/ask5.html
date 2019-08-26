@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 5</title>
+		<script>
+		function createelem() {
+			var elem = document.getElementById("element");
+			var color = document.getElementById("color");
+			var tdiv = document.getElementById("targetdiv");
+			console.log(elem.value);
+			var newelem = document.createElement(elem.value);
+			newelem.style.color = color.value;
+			newelem.innerHTML = "this is the element you wanted to create";
+			tdiv.appendChild(newelem);
+		}
+		</script>
+	</head>
+	<body>
+		<h1>CREATE AN ELEMENT</h1>
+		<label for="element">Element to Create</label>
+		<select id="element" name="element">
+			<option value="" selected>Please choose</option>
+			<option value="h1">H1</option>
+			<option value="h2">H2</option>
+			<option value="h3">H3</option>
+			<option value="p">P</option>
+			<option value="span">SPAN</option>
+		</select>
+		</br>
+		<label for="color">What Color Letters</label>
+		<select id="color" name="color">
+			<option value="" selected>Please choose</option>
+			<option value="red">red</option>
+			<option value="blue">blue</option>
+			<option value="green">green</option>
+		</select>
+		</br>
+		<input type="button" value="Create" onclick="createelem()">
+		</br>
+		<div id="targetdiv">
+		</div>
+	</body>
+</html>

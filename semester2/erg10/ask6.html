@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 6</title>
+		<script>
+		var rowall;
+		var colall;
+		function maketable() {
+			var tab = document.getElementById("tab");
+			var rows = document.getElementById("textrow");
+			var cols = document.getElementById("textcol");
+			var currRow;
+			rowall = rows.value;
+			colall = cols.value;
+			for(var i=0; i<rows.value; i++) {
+				currRow = tab.insertRow(i);
+				for(var j=0; j<cols.value; j++) {
+					currRow.insertCell(j);
+				}
+			}
+		
+		}
+
+		function delrow() {
+			var tab = document.getElementById("tab");
+			tab.deleteRow(-1);
+			rowall--;
+		}
+		function delcol() {
+			var tab = document.getElementById("tab");
+			var nowRow;
+			/*var rowall = document.getElementById("textrow").value;*/
+			for(var i=0; i<rowall; i++) {
+				nowRow = tab.rows[i];
+				nowRow.deleteCell(-1);
+			}
+			colall--;
+		}
+		</script>
+	</head>
+	<body>
+		<h1>MAKE TABLE</h1>
+		<input type="text" id="textrow">
+		<input type="button" value="Delete Row" onclick="delrow()">
+		<br>
+		<input type="text" id="textcol">
+		<input type="button" value="Delete Column" onclick="delcol()">
+		<br>
+		<input type="button" value="Make Table" onclick="maketable()">
+		<br>
+		<table id="tab" border="3"></table>
+	</body>
+</html>

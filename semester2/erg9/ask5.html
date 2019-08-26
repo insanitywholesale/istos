@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 5</title>
+		<script>
+		function addopt() {
+			var txtval = document.getElementById("txtbox").value;
+			var optbox = document.getElementById("optlist");
+			var opt = document.createElement("option");
+			opt.text = txtval;
+			if(txtval) { 
+				optbox.options.add(opt);
+				txtval = "";
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>OPTION ADD</h1>
+		<input type="text" id="txtbox">
+		</br>
+		<input type="button" id="addbtn" value="Add" onclick="addopt()">
+		</br>
+		<select id="optlist">
+		</select>
+	</body>
+</html>

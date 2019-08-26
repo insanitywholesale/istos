@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 1</title>
+		<script>
+		function boxcolor() {
+			var boxelem = document.getElementById('inputbox');
+			if (boxelem.value.length == 0) {
+				boxelem.style.backgroundColor = 'red';
+			}
+			else if (isNaN(boxelem.value)) {
+				boxelem.style.backgroundColor = 'green';
+			}
+			else {
+				boxelem.style.backgroundColor = 'yellow';
+			}
+		}	
+		</script>
+	</head>
+	<body>
+		<h1>TYPE SOME STUFF AND SEE THE COLOR CHANGE</h1>
+		<input type="text" id="inputbox" onchange="boxcolor()">
+	</body>
+</html>

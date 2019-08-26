@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 4</title>
+		<script>
+		var links = document.getElementsByTagName("a");
+		function makesure() {
+			for (var i=0; i<links.length; i++) {
+				links[i].onclick = function confirmopen() {
+					return confirm("Are you sure you want to open that?");
+				}
+			}
+		}
+		</script>
+	</head>
+	<body onload="makesure()">
+		<h1>YOU SURE YOU WANNA CLICK THAT LINK</h1>
+		<a href="http://www.example.com">the first link</a>
+		<br>
+		<a href="http://example.com">the second link</a>
+		<br>
+		<a href="http://www.example.com/index.html">another link</a>
+		<br>
+		<a href="https://gentoo.org">the best link</a>
+		<br>
+		<a href="http://inherently.xyz">some day this link will work</a>
+		<br>
+		<a href="http://distro.watch">and so will this</a>
+	</body>
+</html>

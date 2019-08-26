@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 3</title>
+		<script>
+		var selcount = 0;
+		function clicked(e) {
+			selcount += 1;
+			if (selcount <= 3) {
+				e.target.innerHTML = "you clicked me";
+			}
+			else {
+				e.target.innerHTML = '<img src="linux.png" height="20" width="20">'
+				alert("no more than 3 allowed.");
+				document.getElementById("list").onclick = false;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>CHANGE ONCLICK WITH EVENT</h1>
+		<ul id="list" onclick="clicked(event)">
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four</li>
+			<li>five</li>
+			<li>six</li>
+		</ul>
+	</body>
+</html>

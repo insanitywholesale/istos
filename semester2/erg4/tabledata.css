@@ -1,0 +1,43 @@
+table.datatable {
+	border-collapse: collapse;
+	border: 2px solid green;
+}
+.datatable tr {
+	font-size: 14px;
+	border: 2px solid green;
+}
+.datatable tr:nth-child(odd) {
+	font-size: 13px;
+	background-color: lightgreen;
+}
+.datatable td {
+	font-size: 13px;
+	border: 2px solid green;
+}
+.datatable th {
+	background-color: limegreen;
+	border: 2px solid green;
+	text-align: left;
+	color: white;
+	font-size: 16px;
+}
+
+/* -------- MUCH SMARTER WAY TO DO THIS --------
+table.c {
+    border-collapse: collapse;
+    font-family: Arial;
+}
+
+table.c th {
+    color: white;
+    background-color: #009900;
+}
+
+table.c td, table.c th {
+    border: 1px solid black;
+}
+
+table.c tr:nth-child(even) {
+    background-color: #ccffcc
+}
+*/

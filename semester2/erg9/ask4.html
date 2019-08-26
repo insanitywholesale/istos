@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 4</title>
+		<script>
+		function imgact() {
+			console.log(document.getElementById("colorbtn").value);
+			if(document.getElementById("colorbtn").value === "show") {
+				for(var i=0; i<document.images.length; i++) {
+					document.getElementById("showsrc").innerHTML += document.images[i].src + "<br>";
+				}
+				document.getElementById("colorbtn").value = "hide";
+			}
+			else {
+				document.getElementById("showsrc").innerHTML = "";
+				document.getElementById("colorbtn").value = "show";
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>IMG COLLECTION</h1>
+		<img src="gentoo-init-freedom.jpg">
+		</br>
+        <img src="https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg">
+		</br>
+        <img src="https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png">
+		</br>
+		<input type="button" value="show" id="colorbtn" onclick="imgact()">
+		</br>
+		<p id="showsrc">
+		</p>
+	</body>
+</html>

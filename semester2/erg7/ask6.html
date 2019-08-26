@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 6</title>
+		<script>
+		function onFocus(box) {
+			box.style.backgroundColor = "yellow";
+		}
+		function onBlur(box) {
+			if(box.value.length == 0) {
+				box.style.backgroundColor = "red";
+			}
+			else {
+				box.style.backgroundColor = "white";
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>BOXY BOIZ CHANGING COLOR (THIS)</h1>
+		<input type="text" id="text1" onfocus="onFocus(this)" onblur="onBlur(this)">
+		</br>
+		<input type="text" id="text2" onfocus="onFocus(this)" onblur="onBlur(this)">
+		</br>
+		<input type="text" id="text3" onfocus="onFocus(this)" onblur="onBlur(this)">
+		</br>
+		<input type="text" id="text4" onfocus="onFocus(this)" onblur="onBlur(this)">
+	</body>
+</html>

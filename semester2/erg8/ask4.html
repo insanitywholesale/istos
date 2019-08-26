@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 4</title>
+		<style>
+		.linkclass {
+			color: red;
+			background: yellow;
+		}
+		</style>
+		<script>
+		function setattr() {
+			var aelems = document.getElementsByTagName("a");
+			for(i = 0; i<aelems.length; i++) {
+				attr = document.createAttribute("class");
+				attr.value = "linkclass";
+				aelems[i].setAttributeNode(attr);
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>COLOUR THE LINKS</h1>
+		<a href="example.com">link1</a>
+		</br>
+		<a href="example.com">link2</a>
+		</br>
+		<a href="example.com">link3</a>
+		</br>
+		<a href="example.com">link4</a>
+		</br>
+		<a href="example.com">link5</a>
+		</br>
+		<a href="example.com">link6</a>
+		</br>
+		<a href="example.com">link7</a>
+		</br>
+		<a href="example.com">link8</a>
+		</br>
+		<a href="example.com">link9</a>
+		</br>
+		<a href="example.com">link10</a>
+		</br>
+		<input type="button" value="color them" onclick="setattr()">
+	</body>
+</html>

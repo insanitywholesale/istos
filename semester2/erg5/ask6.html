@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 6</title>
+		<script>
+		function urlsel() {
+			var part = document.getElementById('partsel').value;
+			if(part === "domain") {
+				alert(location.hostname);
+			else
+				alert(location.pathname);
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>FIND SOMETHING ABOUT THE URL</h1>
+		<select name="partsel" id="partsel" onchange="urlsel()">
+			<option value="domain">Domain</option>
+			<option value="path">Path</option>
+		</select>
+	</body>
+</html>

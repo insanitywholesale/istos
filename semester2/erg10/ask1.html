@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 1</title>
+		<script>
+		var imglinks = [];
+		imglinks[0] = "https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png";
+		imglinks[1] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg";
+		imglinks[2] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png";
+		var currentimg = 0;
+		var inter; 
+		function starter() {
+			inter = setInterval(imgnext, 8000);
+		}
+		function stopper() {
+			clearInterval(inter);
+		}
+		function imgnext() {
+			var imgelem = document.getElementById("gentimg");
+			if (currentimg == imglinks.length - 1) {
+				currentimg = 0;
+				imgelem.src = imglinks[currentimg];
+			}
+			else {
+				imgelem.src = imglinks[currentimg + 1];
+				currentimg++;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>IMAGE WALKTHROUGH</h1>
+		<img id="gentimg" src="https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png">
+		</br>
+		<input type="button" id="stop" value="Stop" onclick="stopper()">
+		<input type="button" id="start" value="Start" onclick="starter()">
+	</body>
+</html>

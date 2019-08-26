@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 3</title>
+		<script>
+		function mousechange1() {
+			document.getElementById('image').src = "suse.png";
+		}
+		function mousechange2() {
+			document.getElementById('image').src = "deb.png";
+		}
+		function mousechange3() {
+			document.getElementById('image').src = "linux.png";
+		}
+		</script>
+	</head>
+	<body>
+		<h1>CHANGE IMAGE BASED ON MOUSE EVENTS</h1>
+		<img id="image" src="deb.png" onmouseover="mousechange1()" onmouseout="mousechange2()" onmousedown="mousechange3()">
+	</body>
+</html>

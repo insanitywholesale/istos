@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 2</title>
+		<script>
+		function letterchange() {
+			var inboxelem = document.getElementById('inputbox');
+			var instr = inboxelem.value;
+			document.getElementById('outputbox').value = instr.toUpperCase();
+		}
+		</script>
+	</head>
+	<body>
+		<h1>CHANGE IMAGE BASED ON MOUSE EVENTS</h1>
+		<input type="text" id="inputbox" onkeyup="letterchange()">
+		</br>
+		<input type="text" id="outputbox">
+	</body>
+</html>

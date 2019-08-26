@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 5</title>
+		<script>
+		function maketable() {
+			var rows = document.getElementById("textrow");
+			var cols = document.getElementById("textcol");
+			var table = document.getElementById("tab");
+			var currRow;
+			for(var i=0; i<rows.value; i++) {
+				currRow = tab.insertRow(i);
+				for(var j=0; j<cols.value; j++) {
+					currRow.insertCell(j);
+				}
+			}
+		
+		}
+		</script>
+	</head>
+	<body>
+		<h1>MAKE TABLE</h1>
+		<input type="text" id="textrow">
+		<input type="text" id="textcol">
+		<input type="button" value="Crete Table" onclick="maketable()">
+		<table id="tab" border="3"></table>
+	</body>
+</html>

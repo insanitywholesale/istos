@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>THIS IS A LESS FUNCTIONAL URL BAR</h1>
+		<input type="text" id="textwidth">
+		</br>
+		<input type="text" id="textheight">
+		</br>
+		<input type="text" id="texturl">
+		</br>
+		<input type="button" value="go there ^^" onclick="gothere()">
+		</br>
+		<input type="button" value="resize open window" onclick="resizew()">
+		<script>
+		var windowvar;
+		function gothere() {
+			var urlval = document.getElementById('texturl').value;
+			windowvar = window.open(urlval, '', 'width=250,height=250,location=no,menubar=no');
+		}
+		function resizew() {
+			var widthval = document.getElementById('textwidth').value;
+			var heightval = document.getElementById('textheight').value;
+			windowvar.resizeTo(widthval, heightval);
+			windowvar.focus();
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 3</title>
+		<script>
+		function colorlink() {
+			for(var i = 0; i < document.links.length; i++) {
+				if(window.location.hostname == document.links[i].hostname) {
+					document.links[i].style.backgroundColor = "green";
+				}
+				else {
+					document.links[i].style.backgroundColor = "red";
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>LINK COLLECTION</h1>
+		<a href="ask2.html">ask2</a>
+		</br>
+		<a href="ask1.html">ask1</a>
+		</br>
+		<a href="https://gentoo.org">gentoo</a>
+		</br>
+		<a href="https://lkml.org/">LKML</a>
+		</br>
+		<input type="button" value="colour them" id="colorbtn" onclick="colorlink()">
+	</body>
+</html>

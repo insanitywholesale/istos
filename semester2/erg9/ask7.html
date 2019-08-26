@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 7</title>
+		<script>
+		function helem() {
+			var lvl = document.getElementById("selectlvl").value;
+			var clrbtn = document.getElementById("colorbtn");
+			console.log(clrbtn.value);
+			if(clrbtn.value === "color") {
+				if(lvl === "1st") {
+					for(var i=0; i<document.getElementsByTagName("h1").length; i++) {
+						document.getElementsByTagName("h1")[i].style.backgroundColor = "yellow";
+					}
+					clrbtn.value = "clear";
+				}
+				else {
+					for(var i=0; i<document.getElementsByTagName("h2").length; i++) {
+						document.getElementsByTagName("h2")[i].style.backgroundColor = "yellow";
+					}
+					clrbtn.value = "clear";
+				}
+			}
+			else {
+				for(var i=0; i<document.getElementsByTagName("h1").length; i++) {
+						document.getElementsByTagName("h1")[i].style.backgroundColor = "white";
+				}
+				for(var i=0; i<document.getElementsByTagName("h2").length; i++) {
+						document.getElementsByTagName("h2")[i].style.backgroundColor = "white";
+				}
+				clrbtn.value = "color";
+			}
+		}
+		</script>
+	</head>
+	<body bgcolor="white">
+		<select id="selectlvl">
+			<option value="1st">1st level</option>
+			<option value="2nd">2nd level</option>
+		</select>
+		<input type="button" id="colorbtn" value="color" onclick="helem()">
+		<h1>HIGHLIGHT THE GOOD</h1>
+		<h2>SOMETHING</h2>
+		<h2>MORE</h2>
+		<h1>LET GO OF THE BAD</h1>
+		<h1>what is love</h1>
+		<h2>love</h2>
+		<h1>baby don't hurt me</h1>
+		<h2>don't hurt me</h2>
+		<h2>no more</h2>
+		<h1>BUT IN</h1>
+		<h1>THE END</h1>
+		<h2>it doesn't even matter</h2>
+	</body>
+</html>

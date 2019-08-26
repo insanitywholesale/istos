@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 5</title>
+		<script>
+		function focusbox1() {
+			var boxelem = document.getElementById('box1');
+			boxelem.style.backgroundColor = 'yellow';
+		}
+		function focusbox2() {
+			var boxelem = document.getElementById('box2');
+			boxelem.style.backgroundColor = 'yellow';
+		}
+		function focusbox3() {
+			var boxelem = document.getElementById('box3');
+			boxelem.style.backgroundColor = 'yellow';
+		}
+		function focusbox4() {
+			var boxelem = document.getElementById('box4');
+			boxelem.style.backgroundColor = 'yellow';
+		}
+
+		function blurbox1() {
+			var boxelem = document.getElementById('box1');
+			if (boxelem.value != 0) {
+				boxelem.style.backgroundColor = 'white';
+			}
+			else {
+				boxelem.style.backgroundColor = 'red';
+			}
+		}
+		function blurbox2() {
+			var boxelem = document.getElementById('box2');
+			if (boxelem.value != 0) {
+				boxelem.style.backgroundColor = 'white';
+			}
+			else {
+				boxelem.style.backgroundColor = 'red';
+			}
+		}
+		function blurbox3() {
+			var boxelem = document.getElementById('box3');
+			if (boxelem.value != 0) {
+				boxelem.style.backgroundColor = 'white';
+			}
+			else {
+				boxelem.style.backgroundColor = 'red';
+			}
+		}
+		function blurbox4() {
+			var boxelem = document.getElementById('box4');
+			if (boxelem.value != 0) {
+				boxelem.style.backgroundColor = 'white';
+			}
+			else {
+				boxelem.style.backgroundColor = 'red';
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<h1>(UN)FOCUS TEXT BOXES</h1>
+		<input type="text" id="box1" onfocus="focusbox1()" onblur="blurbox1()">
+		</br>
+		<input type="text" id="box2" onfocus="focusbox2()" onblur="blurbox2()">
+		</br>
+		<input type="text" id="box3" onfocus="focusbox3()" onblur="blurbox3()">
+		</br>
+		<input type="text" id="box4" onfocus="focusbox4()" onblur="blurbox4()">
+		</br>
+	</body>
+</html>

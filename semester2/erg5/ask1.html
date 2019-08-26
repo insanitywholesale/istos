@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>ask 1</title>
+		<script>
+		function addunder9k() {
+			var textbox1 = document.getElementById('text1');
+			var textbox2 = document.getElementById('text2');
+			var sum = parseInt(textbox1.value) + parseInt(textbox2.value);
+			textbox2.value = sum;
+			if(sum > 9000)
+                {
+					alert(" IT'S OVER 9000!!! ");
+				}
+		}	
+		</script>
+	</head>
+	<body>
+		<h1>THIS IS A COUNTER</h1>
+		<input type="text" id="text1">
+		</br>
+		<input type="text" id="text2">
+		</br>
+		<input type="button" value="Add" onclick="addunder9k()">
+	</body>
+</html>
