@@ -3,21 +3,30 @@
 	<head>
 	</head>
 	<body>
-		<h1>THIS IS A LESS FUNCTIONAL URL BAR</h1>
-		<input type="text" id="textwidth">
-		</br>
-		<input type="text" id="textheight">
-		</br>
+		<center>
+		<h1>LESS FUNCTIONAL URL BAR + SELECT SIZE</h1>
+		<hr/>
+		<h3>URL:</h3>
 		<input type="text" id="texturl">
-		</br>
+		<br/>
+		<h3>Height:</h3>
+		<input type="text" id="textheight">
+		<br/>
+		<h3>Width:</h3>
+		<input type="text" id="textwidth">
+		<br/>
 		<input type="button" value="go there ^^" onclick="gothere()">
-		</br>
+		<br/>
 		<input type="button" value="resize open window" onclick="resizew()">
+		</center>
 		<script>
 		var windowvar;
 		function gothere() {
 			var urlval = document.getElementById('texturl').value;
-			windowvar = window.open(urlval, '', 'width=250,height=250,location=no,menubar=no');
+			var widthval = document.getElementById('textwidth').value;
+			var heightval = document.getElementById('textheight').value;
+			var opts = "width=" + widthval + "," + "height=" + heightval + ",location=no,menubar=no";
+			windowvar = window.open(urlval, '_blank', opts, false);
 		}
 		function resizew() {
 			var widthval = document.getElementById('textwidth').value;
