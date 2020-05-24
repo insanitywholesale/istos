@@ -3,44 +3,46 @@
 	<head>
 		<title>ask 1</title>
 		<script>
-		var imglinks = [];
-		imglinks[0] = "https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png";
-		imglinks[1] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg";
-		imglinks[2] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png";
-		var currentimg = 0;
-		function imginit() {
-			var imgelem = document.getElementById("gentimg");
-			imgelem.src = imglinks[0];
-		}
-		function imgprev() {
-			var imgelem = document.getElementById("gentimg");
-			if (currentimg > 0) {
-				imgelem.src = imglinks[currentimg - 1];
-				currentimg--;
+			var imglinks = [];
+			imglinks[0] = "https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png";
+			imglinks[1] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg";
+			imglinks[2] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png";
+			var currentimg = 0;
+			function imginit() {
+				var imgelem = document.getElementById("gentimg");
+				imgelem.src = imglinks[0];
 			}
-			else {
-				imgelem.src = imglinks[imglinks.length - 1];
-				currentimg = imglinks.length - 1;
+
+			function imgprev() {
+				var imgelem = document.getElementById("gentimg");
+				if (currentimg > 0) {
+					imgelem.src = imglinks[currentimg - 1];
+					currentimg--;
+				}
+				else {
+					imgelem.src = imglinks[imglinks.length - 1];
+					currentimg = imglinks.length - 1;
+				}
 			}
-		}
-		function imgnext() {
-			var imgelem = document.getElementById("gentimg");
-			if (currentimg == imglinks.length - 1) {
-				currentimg = 0;
-				imgelem.src = imglinks[currentimg];
+
+			function imgnext() {
+				var imgelem = document.getElementById("gentimg");
+				if (currentimg == imglinks.length - 1) {
+					currentimg = 0;
+					imgelem.src = imglinks[currentimg];
+				}
+				else {
+					imgelem.src = imglinks[currentimg + 1];
+					currentimg++;
+				}
 			}
-			else {
-				imgelem.src = imglinks[currentimg + 1];
-				currentimg++;
-			}
-		}
 		</script>
 	</head>
 	<body onload="imginit()">
 		<h1>IMAGE WALKTHROUGH</h1>
-		<img id="gentimg" src="">
-		</br>
 		<input type="button" id="prev" value="Previous" onclick="imgprev()">
 		<input type="button" id="next" value="Next" onclick="imgnext()">
+		<br/>
+		<img id="gentimg" src="">
 	</body>
 </html>

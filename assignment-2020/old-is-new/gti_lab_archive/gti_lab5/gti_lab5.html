@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>gti_lab-5</title>
+</head>
+
+<body>
+
+<input type="text" id="text1" value="0"/>
+<button type="button" onclick="addNum()">add</button>
+<input type="text" id="text2" value="0"/>
+
+<script>
+
+function addNum(){
+var t1 = parseFloat(document.getElementById("text1").value)
+var t2 = parseFloat(document.getElementById("text2").value)
+var t2 = t1 + t2
+if (t2 > 1000){
+	alert("over 1000")
+}
+
+else{
+	document.getElementById("text2").value = t2
+}
+
+
+}
+
+</script>
+
+</body>
+
+</html>

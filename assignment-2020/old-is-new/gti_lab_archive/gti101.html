@@ -1,0 +1,40 @@
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>gti10-1</title>
+		    <script>
+    var i = 0;
+            var imglinks = ["https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.improgrammer.net%2Fwp-content%2Fuploads%2F2014%2F06%2Flinux.png&f=1", "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpoper.com%2Fimages%2F00%2F44%2F43%2F37%2Flinux-2_00444337.jpg&f=1", "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.linuxmint.com%2Fpictures%2Fscreenshots%2Fsarah%2Fcinnamon.png&f=1", "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.A1bDdzA7qrWpQi-36oKOnAHaEK%26pid%3D15.1&f=1"]
+	    var methslidenext = setInterval(function(){ nextimg() }, 1000);
+	    function startslide(){
+		        setInterval(function(){ nextimg() }, 1000);
+	    }
+function stopslide(){
+	    clearInterval(methslidenext);
+}
+function nextimg(){
+	    i +=1
+		        if(i >= imglinks.length) {
+				        i = 0;
+					    }
+	        document.getElementById("theimage").src = imglinks[i];
+}
+function previmg(){
+	    document.getElementById("theimage").src = imglinks[i-1];
+}
+function methnextimg(){
+	    var methslidenext = setInterval(nextimg, 3000);
+}
+function methprevimg(){
+	    var methslideprev = setInterval(previmg, 1000);
+}
+    </script>
+	</head>
+	<body>
+		    <p id="thep"><img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpoper.com%2Fimages%2F00%2F44%2F43%2F37%2Flinux-2_00444337.jpg&f=1" id="theimage"/></p>
+		        <button onclick="startslide()">Start</button>
+			    <button onclick="stopslide()">Stop</button>
+	</body>
+</html>
+

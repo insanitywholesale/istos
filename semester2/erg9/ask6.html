@@ -3,27 +3,27 @@
 	<head>
 		<title>ask 6</title>
 		<script>
-		function tablefill() {
-			var table = document.getElementById("tbl");
-			for(var i=0; i<table.rows.length; i++) {
-				for(var j=0; j<table.rows[i].cells.length; j++) {
-					rand = Math.floor((Math.random() * 10) + 1);
-					table.rows[i].cells[j].innerHTML = rand;
-					if(rand > 5) {
-						table.rows[i].cells[j].style.backgroundColor = "green";
-					}
-					else {
-						table.rows[i].cells[j].style.backgroundColor = "red";
+			function tablefill() {
+				var table = document.getElementById("tbl");
+				for(var i=0; i<table.rows.length; i++) {
+					for(var j=0; j<table.rows[i].cells.length; j++) {
+						rand = Math.floor((Math.random() * 10) + 1);
+						table.rows[i].cells[j].innerHTML = rand;
+						if(rand > 5) {
+							table.rows[i].cells[j].style.backgroundColor = "green";
+						}
+						else {
+							table.rows[i].cells[j].style.backgroundColor = "red";
+						}
 					}
 				}
 			}
-		}
 		</script>
 	</head>
 	<body>
-		<h1>TABLE FILL AND COLOR</h1>
+		<h1>TABLE RANDOM FILL WITH COLOR</h1>
 		</br>
-		<table id="tbl" border="4" style="text-align:center;">
+		<table id="tbl" border="4" style="width:200px;height:200px;table-layout:fixed;text-align:center;">
 			<tr>
 				<td></td>
 				<td></td>

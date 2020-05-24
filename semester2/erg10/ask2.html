@@ -3,39 +3,45 @@
 	<head>
 		<title>ask 2</title>
 		<script>
-		var imglinks = [];
-		imglinks[0] = "https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png";
-		imglinks[1] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg";
-		imglinks[2] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png";
-		var currentimg = 0;
-		var inter; 
-		var timeout;
-		function starter() {
-			inter = setInterval(imgnext, 8000);
-		}
-		function stopper() {
-			clearInterval(inter);
-		}
-		function imgnext() {
-			var imgelem = document.getElementById("gentimg");
-			if (currentimg == imglinks.length - 1) {
-				currentimg = 0;
-				imgelem.src = imglinks[currentimg];
+			var imglinks = [];
+			imglinks[0] = "https://www.gentoo.org/assets/img/wallpaper/abducted/gentoo-abducted-1024x768.png";
+			imglinks[1] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-10/blue/1280x720.jpg";
+			imglinks[2] = "https://www.gentoo.org/assets/img/wallpaper/gentoo-cow/gentoo-cow-gdm-remake-1366x768.png";
+
+			var currentimg = 0;
+			var inter; 
+			var timeout;
+
+			function starter() {
+				inter = window.setInterval(imgnext, 3000);
 			}
-			else {
-				imgelem.src = imglinks[currentimg + 1];
-				currentimg++;
+
+			function stopper() {
+				window.clearInterval(inter);
 			}
-		}
-		function autostop() {
-			var stoptime = document.getElementById("stasis");
-			if(stoptime.value) {
-				timeout = setTimeout(starter, stoptime.value);
+
+			function imgnext() {
+				var imgelem = document.getElementById("gentimg");
+				if (currentimg == imglinks.length - 1) {
+					currentimg = 0;
+					imgelem.src = imglinks[currentimg];
+				}
+				else {
+					imgelem.src = imglinks[currentimg + 1];
+					currentimg++;
+				}
 			}
-		}
-		function removestop() {
-			clearTimeout(timeout); 
-		}
+
+			function addtimeout() {
+				var stoptime = document.getElementById("timeoutval");
+				if(stoptime.value) {
+					timeout = window.setTimeout(imgnext, stoptime.value);
+				}
+			}
+
+			function removetimeout() {
+				window.clearTimeout(timeout); 
+			}
 		</script>
 	</head>
 	<body>
@@ -45,7 +51,8 @@
 		<input type="button" id="stop" value="Stop" onclick="stopper()">
 		<input type="button" id="start" value="Start" onclick="starter()">
 		</br>
-		<input type="text" id="stasis">
-		<input type="button" id="cleartimeout" value="add time limit" onclick="removestop()">
+		<input type="text" id="timeoutval">
+		<input type="button" id="addtimeout" value="set timeout" onclick="addtimeout()">
+		<input type="button" id="cleartimeout" value="remove timeout" onclick="removetimeout()">
 	</body>
 </html>

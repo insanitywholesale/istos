@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>gti91</title>
+<script>
+var imgarr = ["https://wallpaperbrowse.com/media/images/cat-1285634_960_720.png", "https://thumbs.dreamstime.com/b/una-rosa-azul-con-verde-se-va-en-un-fondo-oscuro-93840714.jpg", "https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg", "https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGPxr5YVeZpmTqzqj_d014wHxE177aOnCgtjJairNqcQeTXyfew"]
+var i=0;
+
+function nextitem() {
+	imagemain = document.getElementById("imgmain");
+    i = i + 1;
+    if(i == imgarr.length){
+    	i = 0;
+    }
+
+    imagemain.src = imgarr[i];
+}
+
+function previtem() {
+	imagemain = document.getElementById("imgmain");
+    i = i - 1;
+    if (i == 0) {
+        i = imgarr.length - 1;
+    }
+
+    imagemain.src = imgarr[i]
+}
+
+
+</script>
+</head>
+
+<body>
+
+<img name="imgmain" id="imgmain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGPxr5YVeZpmTqzqj_d014wHxE177aOnCgtjJairNqcQeTXyfew"/>
+
+<input id="prevbutton" type="button" value="prev "onclick="previtem()"/>
+<input type="button" id="nextbutton" value="next" onclick="nextitem()"/>
+</body>
+
+</html>

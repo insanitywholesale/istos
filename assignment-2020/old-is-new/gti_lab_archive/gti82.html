@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>gti82</title>
+</head>
+
+<body>
+
+<ul id="ulist">
+<li>1-li</li>
+<li>2-li</li>
+<li>3-li</li>
+<li>4-li</li>
+<li>5-li</li>
+<li>6-li</li>
+</ul>
+
+
+<script>
+document.getElementById("ulist").onmousedown = markthis;
+var x = 0;
+	
+function markthis(event){
+
+if(event.target.tagName  == "LI"){
+	if(x>3){
+		event.target.innerHTML = "no more";
+	}
+	else{
+		event.target.innerHTML = "you clicked me";
+		x = x + 1;
+	}
+	
+	
+
+}
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>

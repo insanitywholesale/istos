@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>gti102</title>
+
+<script>
+var intid;
+var intidd;
+var i = 0;
+var imglinks = ["https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.improgrammer.net%2Fwp-content%2Fuploads%2F2014%2F06%2Flinux.png&f=1", "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpoper.com%2Fimages%2F00%2F44%2F43%2F37%2Flinux-2_00444337.jpg&f=1", "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.linuxmint.com%2Fpictures%2Fscreenshots%2Fsarah%2Fcinnamon.png&f=1", "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.A1bDdzA7qrWpQi-36oKOnAHaEK%26pid%3D15.1&f=1"]
+
+function startslide(){
+	if(document.getElementById("textin").value == ""){
+		intidd = setTimeout(function(){intid = window.setInterval("nextimg()", 1000);}, 100);
+	}
+	else{
+		intidd = setTimeout(function(){intid = window.setInterval("nextimg()", document.getElementById("textin").value);}, 100);
+	}
+}
+
+function stopslide(){
+	    window.clearInterval(intid);
+	    clearTimeout(initdd);
+}
+
+function stopp(){
+	document.getElementById("textin").value = 0;
+	clearTimeout(initdd);
+}
+
+function nextimg(){
+	    i +=1
+		if(i >= imglinks.length){
+			i = 0;
+		}
+	    document.getElementById("theimage").src = imglinks[i];
+}
+</script>
+
+</head>
+
+<body>
+<img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpoper.com%2Fimages%2F00%2F44%2F43%2F37%2Flinux-2_00444337.jpg&f=1" id="theimage"/>
+<button onclick="startslide()">Start</button>
+<button onclick="stopslide()">Stop</button>
+<input type="text" id="textin" value=""/>
+<button onclick="stopp()">Stoptimeout</button>
+
+</body>
+
+</html>

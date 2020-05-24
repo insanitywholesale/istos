@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  background-color: #e57c27;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;">
+
+<div style="background-color:#2790e5;padding:15px;text-align:center">
+  <h1>~~If you have a site, it should be like this one~~</h1>
+</div>
+
+<div style="overflow:auto">
+	<div class="menu">
+		<div class="menuitem"><a href="refpage1.html">Rundown of command to install arch linux</a></div>	  
+		<div class="menuitem"><a href="https://userbase.kde.org/Falkon">A good alternative web browser</div>
+		<div class="menuitem"><a href="https://www.w3schools.com/colors/colors_picker.asp">Pick a color</a></div>
+    		<div class="menuitem"><a href="https://passthroughpo.st">Awesome Site</a></div>
+  	 </div>
+
+  <div class="main">
+    <h2>Installing Arch Linux can be near automatic</h2>
+    <p>These are my two scripts for before and after the chroot step</p>
+    	<code>	
+	<p>#!/bin/bash</p>
+	<p>timedatectl set-ntp true</p>
+	<p>mkfs.fat -F32 /dev/sda1</p>
+	<p>mkfs.ext4 /dev/sda2</p>
+	<p>mkswap /dev/sda3</p>
+	<p>swapon /dev/sda3</p>
+	<p>mount /dev/sda2 /mnt</p>
+	<p>mkdir /mnt/boot</p>
+	<p>mount /dev/sda1 /mnt/boot</p>
+	<p>cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup</p>
+	<p>rankmirrors -n 9 /etc/pacman.d/mirrorlist.backup &gt; /etc/pacman.d/mirrorlist</p>
+	<p>pacstrap /mnt base base-devel</p>
+	<p>genfstab -U /mnt &gt; /mnt/etc/fstab</p>
+	<p>arch-chroot /mnt</p>
+	</code>
+
+	<p>That was the first part. Now, on to the second one.</p>
+	<code>
+		<p>ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime</p>
+	<p>hwclock --systohc</p>
+	<p>echo 'en_US.UTF-8 UTF-8' &gt;&gt; /etc/locale.gen</p>
+	<p>echo 'LANG=en_US.UTF-8' &gt; /etc/locale.conf</p>
+	<p>echo 'archaos' &gt; /etc/hostname</p>
+	<p>echo '127.0.0.1 localhost' &gt; /etc/hosts</p>
+	<p>echo '::1       localhost' &gt;&gt; /etc/hosts</p>
+	<p>echo '127.0.1.1 archaos.hell    archaos' &gt;&gt; /etc/hosts</p>
+	<p>mkinitcpio -p linux</p>
+	<p>pacman -S intel-ucode grub efibootmgr --no-confirm</p>
+	<p>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=archaos</p>
+	<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+	<p>pacman -S vim i3 i3-lock i3-status xorg xorg-xinit qemu libvirt firewalld dnsmasq ovmf polkit-gnome openssh openssh-askpass virt-manager networkmanager network-manager-applet compton redshift feh dmenu termite firefox thunar ntfs-3g lxappearance qt5ct ttf-dejavu ttf-liberation noto-fonts pango ttf-font-awesome qt5-styleplugins rsync cpupower xfce4-screenshooter htop vlc gparted kdenlive thunderbird steam keepass pavucontrol ranger --no-confirm</p>
+	<p>useradd -m -g users -G wheel users kvm libvirt -s /bin/bash angle</p>
+	<p>echo 'remember to do passwd for angle and root'</p>
+	</code>
+	
+	<p>Now you just need to set a password for root, and one for your user. That can be achieved using</p>
+	<code><p>passwd</p></code>
+	<p>and</p>
+	<code><p>passwd angle<p/></code>
+	<p>respectively</p>
+	<p></p>
+	<p>Enjoy :)</p>
+  </div>
+
+  <div class="right">
+    <h2>Recent Articles</h2>
+      <ul>
+        <li><a href="https://passthroughpo.st/apply-error-43-workaround/">How to Apply the Error 43 Workaround</a></li>
+        <li><a href="https://passthroughpo.st/arch-linux-broke-ovmf-passthrough-heres-fix/">Arch Linux Broke OVMF Passthrough, Here is How to Fix it</a></li> 
+        <li><a href="https://passthroughpo.st/ovirt-installation-guide/">oVirt Installation Guide</a></li>
+	<li><a href="https://passthroughpo.st/things-vfio-working/">5 Things To Do Once You Have a Working Gaming VM</a></li>
+	<li><a href="https://passthroughpo.st/using-vfio-turn-destkop-router/">Run a Virtual PFSense Router on your Linux Host</a></li>
+    </ul>
+    <h2>About</h2>
+    <p><a href="https://github.com/insanitywholesale/">My GitHub</a></p>
+    <h2>Also About</h2>
+    <p>Nothing else, I just wanted three h2 elements</p>
+  </div>
+</div>
+
+<div style="background-color:#e57c27;text-align:center;padding:10px;margin-top:7px;font-size:12px;"><a href="index.html">Go Home</a></div>
+
+</body>
+</html>

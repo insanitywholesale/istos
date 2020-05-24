@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>makecapital</title>
+
+<script>
+function makecapital(){
+	var x1 = document.getElementById("text1");
+	var x2 = document.getElementById("text2");
+	var xupper = x1.value.toUpperCase();
+	
+	x2.value = xupper;
+}
+</script>
+
+</head>
+
+<body>
+
+<input type="text" id="text1" onkeydown="makecapital()" onkeyup="makecapital()"/>
+<input type="type" id="text2"/>
+
+</body>
+
+</html>
